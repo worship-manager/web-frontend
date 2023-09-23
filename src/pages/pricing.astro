@@ -6,15 +6,12 @@ import PricingCard from "@components/pricing.astro";
 
 const pricing = [
   {
-    name: "Personal",
+    name: "Demo",
     price: "Free",
     popular: false,
     features: [
       "Lifetime free",
-      "Up to 3 users",
-      "Unlimited Pages",
-      "Astro Sub domain",
-      "Basic Integrations",
+      "Only one device at once",
       "Community Support",
     ],
     button: {
@@ -23,42 +20,37 @@ const pricing = [
     },
   },
   {
-    name: "Startup",
+    name: "Monthly",
     price: {
-      monthly: "$19",
-      annual: "$16",
-      discount: "10%",
-      original: "$24",
+      monthly: "$10",
+      original: "$12",
     },
     popular: true,
     features: [
       "All Free Features",
-      "Up to 20 users",
-      "20 Custom domains",
-      "Unlimited Collaborators",
-      "Advanced Integrations",
+      "Up to 5 devices at once",
       "Priority Support",
     ],
     button: {
-      text: "Get Started",
+      text: "Buy now",
       link: "#",
     },
   },
   {
-    name: "Enterprise",
-    price: "Custom",
-    popular: false,
+    name: "Yearly",
+    price: {
+      monthly: "$8",
+      original: "$10",
+    },
+    popular: true,
     features: [
-      "All Pro Features",
-      "Unlimited Custom domains",
-      "99.99% Uptime SLA",
-      "SAML & SSO Integration",
-      "Dedicated Account Manager",
-      "24/7 Phone Support",
+      "All Free Features",
+      "Up to 5 devices at once",
+      "Priority Support",
     ],
     button: {
-      text: "Contact us",
-      link: "/contact",
+      text: "Buy now",
+      link: "#",
     },
   },
 ];
