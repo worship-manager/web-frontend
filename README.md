@@ -1,7 +1,7 @@
-# Present Worship Website
+# Worship Manager Website
 
-This is the website for the Present Worship project.
+This is the website for the Worship Manager project.
 
 ## Overview
 
-Present(as in, the present) Worship is presentation software built to empower church services
+Worship Manager is presentation software built to empower church services

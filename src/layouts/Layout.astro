@@ -18,8 +18,8 @@ const resolvedImageWithDomain = new URL(
 const { title } = Astro.props;
 
 const makeTitle = title
-  ? title + " | " + "Present Worship"
-  : "Present Worship | Official Website";
+  ? title + " | " + "Worshi Worship"
+  : "Worship Manager | Official Website";
 ---
 
 <!DOCTYPE html>
@@ -33,17 +33,17 @@ const makeTitle = title
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <SEO
       title={makeTitle}
-      description="Present Worship official website"
+      description="Worship Manager official website"
       canonical={canonicalURL}
       openGraph={{
         basic: {
           url: canonicalURL,
           type: "website",
-          title: "Present Worship Official Website",
+          title: "Worship Manager Official Website",
           image: resolvedImageWithDomain,
         },
         image: {
-          alt: "Present Worship Official Website",
+          alt: "Worship Manager Official Website",
         },
       }}
     />
