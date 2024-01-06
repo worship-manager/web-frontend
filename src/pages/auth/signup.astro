@@ -1,0 +1,27 @@
+---
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Signupform from "@components/signupform.astro";
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout title="Sign Up">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Sign Up</Fragment>
+      <Fragment slot="desc"></Fragment>
+    </Sectionhead>
+
+    <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
+      <div>
+        <h2 class="font-medium text-2xl text-gray-800">Create a new account for free</h2>
+        <p class="text-lg leading-relaxed text-slate-500 mt-3">
+          Already have an account? <a href="/auth/login" class="underline">Login</a>
+        </p>
+      </div>
+      <div>
+        <Signupform />
+      </div>
+    </div>
+  </Container>
+</Layout>

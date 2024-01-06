@@ -1,0 +1,33 @@
+---
+import Container from "@components/container.astro";
+import Loginform from "@components/loginform.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Layout from "@layouts/Layout.astro";
+import { Icon } from "astro-icon";
+---
+
+<Layout title="Login">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Login</Fragment>
+      <Fragment slot="desc"></Fragment>
+    </Sectionhead>
+
+    <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
+      <div>
+        <h2 class="font-medium text-2xl text-gray-800">Login to your account</h2>
+        <div class="mt-5 flex items-center space-x-2 text-gray-600">
+          <Icon class="text-gray-400 w-5 h-5" name="mdi:lock-reset" />
+          <span>Forgot Password?</span>
+        </div>
+
+        <p class="text-lg leading-relaxed text-slate-500 mt-3">
+          Don't have an account? <a href="/auth/signup" class="underline">Sign up</a>
+        </p>
+      </div>
+      <div>
+        <Loginform />
+      </div>
+    </div>
+  </Container>
+</Layout>
