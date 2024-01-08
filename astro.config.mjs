@@ -9,7 +9,13 @@ import react from "@astrojs/react";
 // https://astro.build/config
 export default defineConfig({
   site: "https://worshipmanager.org",
-  integrations: [tailwind(), image({
-    serviceEntryPoint: "@astrojs/image/sharp"
-  }), mdx(), sitemap(), react({include: ["./src/components/**/*"]})]
+  integrations: [
+    tailwind(),
+    image({
+      serviceEntryPoint: "@astrojs/image/sharp",
+    }),
+    mdx(),
+    sitemap(),
+    react({ include: ["./src/**/*.tsx"] }),
+  ],
 });
