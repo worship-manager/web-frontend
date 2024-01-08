@@ -1,0 +1,16 @@
+---
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Layout from "@layouts/Layout.astro";
+import VerifyEmailComponent from "@components/verify";
+---
+
+<Layout title="Verify Email">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Verifying your Email</Fragment>
+      <Fragment slot="desc"></Fragment>
+    </Sectionhead>
+    <VerifyEmailComponent client:only="react" />
+  </Container>
+</Layout>
