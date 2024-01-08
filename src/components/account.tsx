@@ -70,9 +70,9 @@ export default function AccountComponent() {
 
   if (!account) {
     if (error) {
-      return <div>{error}</div>;
+      return <div className="text-center text-red-500">{error}</div>;
     }
-    return <div>No account information</div>;
+    return <div className="text-center text-red-500">No account information</div>;
   }
 
   return (
