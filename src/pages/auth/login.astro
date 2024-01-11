@@ -31,3 +31,23 @@ import { Icon } from "astro-icon";
     </div>
   </Container>
 </Layout>
+
+<script>
+  const reqUrl = import.meta.env.PUBLIC_SERVER_URL;
+  fetch(reqUrl + "/api/user/session", {
+    method: "GET",
+    credentials: "include",
+    mode: "cors",
+  })
+    .then(async (res) => {
+      if (res.status == 200) {
+        const json = await res.json();
+        if (json.isActive) {
+          window.location.href = "/account";
+        }
+      }
+    })
+    .catch((e) => {
+      console.error(e);
+    });
+</script>
