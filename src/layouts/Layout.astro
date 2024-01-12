@@ -14,7 +14,7 @@ const resolvedImageWithDomain = new URL("/opengraph.png", Astro.site).toString()
 
 const { title } = Astro.props;
 
-const makeTitle = title ? title + " | " + "Worshi Worship" : "Worship Manager | Official Website";
+const makeTitle = title ? title + " | " + "Worship Worship" : "Worship Manager | Official Website";
 ---
 
 <!doctype html>
@@ -22,13 +22,13 @@ const makeTitle = title ? title + " | " + "Worshi Worship" : "Worship Manager | 
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/logo.png" />
+    <link rel="icon" type="image/svg+xml" href="/logo.ico" />
     <meta name="generator" content={Astro.generator} />
 
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <SEO
       title={makeTitle}
-      description="Worship Manager official website"
+      description="Worship Manager official website present church services and sermons from your laptop using windows or linux. Go to worshipmanager at worshipmanager.org today"
       canonical={canonicalURL}
       openGraph={{
         basic: {
