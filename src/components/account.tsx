@@ -65,20 +65,20 @@ export default function AccountComponent() {
   }, []);
 
   if (isLoading) {
-    return <div className="text-center">Loading...</div>;
+    return <div>Loading...</div>;
   }
 
   if (!account) {
     if (error) {
-      return <div className="text-center text-red-500">{error}</div>;
+      return <div className="text-red-500">{error}</div>;
     }
-    return <div className="text-center text-red-500">No account information</div>;
+    return <div className="text-red-500">No account information</div>;
   }
 
   return (
     <>
-      <p className="text-red-500 text-center text-sm">{error}</p>
-      <form className="max-w-lg mx-auto mt-16 flex flex-col gap-4">
+      <p className="text-red-500 text-sm">{error}</p>
+      <form className="text-left w-full mt-16 flex flex-col gap-4">
         <label>
           Name
           <input

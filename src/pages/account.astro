@@ -3,6 +3,7 @@ import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
 import Layout from "@layouts/Layout.astro";
 import Account from "@components/account";
+import Button from "@components/ui/button.astro";
 ---
 
 <Layout title="Account">
@@ -11,7 +12,34 @@ import Account from "@components/account";
       <Fragment slot="title">Account</Fragment>
       <Fragment slot="desc">Manage your Worship Manager Account</Fragment>
     </Sectionhead>
-    <Account client:only="react" />
+    <div class="text-center max-w-lg mx-auto flex flex-col gap-8">
+      <Account client:only="react" />
+      <Button id="logout-btn">Logout</Button>
+    </div>
   </Container>
 </Layout>
 
+<script>
+  const reqUrl = import.meta.env.PUBLIC_SERVER_URL;
+  const logoutButton = document.getElementById("logout-btn") as HTMLButtonElement;
+
+  logoutButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    (e.target as HTMLButtonElement).disabled = true;
+    fetch(reqUrl + "/api/user/logout", { method: "POST", credentials: "include", mode: "cors" })
+      .then(async (res) => {
+        if (res.status != 200) {
+          console.log(res.status, await res.text());
+          const json = await res.json();
+          console.error(json);
+          return;
+        }
+        const data = await res.text();
+        console.log(data);
+      })
+      .catch((e) => console.error(e))
+      .finally(() => {
+        setTimeout(() => (window.location.href = "/"), 3000);
+      });
+  });
+</script>
