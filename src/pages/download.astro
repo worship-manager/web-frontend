@@ -1,0 +1,40 @@
+---
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Layout from "@layouts/Layout.astro";
+import { Icon } from "astro-icon";
+import Link from "@components/ui/link.astro";
+---
+
+
+<Layout title="Account">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Download</Fragment>
+      <Fragment slot="desc">Get the Worship Manager installer</Fragment>
+    </Sectionhead>
+    <div class="max-w-2xl mx-auto flex justify-center items-center gap-5 mt-16">
+      <label>
+        <select id="os-select" class="px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100">
+          <option selected disabled value="">Select OS</option>
+          <option value="windows">Windows</option>
+          <option value="linux">Linux</option>
+        </select>
+      </label>
+      <Link style="primary" id="download-link">Download</Link>
+    </div>
+  </Container>
+</Layout>
+
+<script>
+const osSelect = document.getElementById("os-select") as HTMLSelectElement;
+const downloadLink = document.getElementById("download-link") as HTMLButtonElement;
+
+const reqUrl = import.meta.env.PUBLIC_SERVER_URL;
+osSelect.addEventListener("change", (e) => {
+  const os = e.target.value;
+  downloadLink.href = `${reqUrl}/api/download/${os}`
+})
+
+osSelect.value && (downloadLink.href = `${reqUrl}/api/download/${osSelect.value}`);
+</script>
