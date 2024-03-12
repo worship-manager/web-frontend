@@ -1,0 +1,46 @@
+---
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Button from "@components/ui/button.astro";
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout title="Buy">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Buy Worship Manager License</Fragment>
+      <Fragment slot="desc">
+        Get a Worship Manager License and enjoy all Worship Manager features
+      </Fragment>
+    </Sectionhead>
+    <div class="max-w-2xl mx-auto flex justify-center items-center gap-5 mt-16">
+      <Button id="buy-now">BUY NOW</Button>
+    </div>
+  </Container>
+</Layout>
+
+<script>
+  const plan = new URLSearchParams(window.location.search).get("plan") ?? "monthly";
+  const reqUrl = new URL("/api/user/payment", import.meta.env.PUBLIC_SERVER_URL);
+  reqUrl.searchParams.set("package", plan.toUpperCase());
+  const buyNowBtn = document.getElementById("buy-now") as HTMLButtonElement;
+
+  buyNowBtn.addEventListener("click", async () => {
+    await fetch(reqUrl, {
+      method: "GET",
+      credentials: "include",
+      mode: "cors",
+    })
+      .then(async (res) => {
+        const json = await res.json();
+        if (json.cause || res.status != 200) {
+          alert(json.cause);
+          return;
+        }
+        window.location = json.redirectUrl;
+      })
+      .catch((e) => {
+        console.error(e);
+      });
+  });
+</script>

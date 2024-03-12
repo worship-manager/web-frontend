@@ -43,7 +43,8 @@ import { Icon } from "astro-icon";
       if (res.status == 200) {
         const json = await res.json();
         if (json.isActive) {
-          window.location.href = "/account";
+          const redirect = new URLSearchParams(window.location.search).get("redirect");
+          window.location.href = decodeURIComponent(redirect ?? "/account");
         }
       }
     })

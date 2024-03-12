@@ -89,7 +89,8 @@ import Button from "./ui/button.astro";
         result.classList.add("text-green-500");
         result.innerHTML = "Login successful!";
         setTimeout(() => {
-          location.href = "/account";
+          const redirect = new URLSearchParams(window.location.search).get("redirect");
+          location.href = decodeURIComponent(redirect ?? "/account");
         }, 1000);
       })
       .catch((error) => {

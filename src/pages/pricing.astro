@@ -24,7 +24,7 @@ const pricing = [
     features: ["All Free Features", "Up to 5 devices at once", "Priority Support"],
     button: {
       text: "Buy now",
-      link: "#",
+      link: `/auth/login?redirect=${encodeURIComponent("/buy?plan=monthly")}`,
     },
   },
   {
@@ -37,7 +37,7 @@ const pricing = [
     features: ["All Free Features", "Up to 5 devices at once", "Priority Support"],
     button: {
       text: "Buy now",
-      link: "#",
+      link: `/auth/login?redirect=${encodeURIComponent("/buy?plan=yearly")}`,
     },
   },
 ];
