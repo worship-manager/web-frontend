@@ -114,7 +114,9 @@ export default function AccountComponent() {
           Account Type
           <input
             defaultValue={`${account.subscription} (Expires: ${
-              account.subscriptionEndDate?.toDateString() ?? "NEVER"
+              account.subscriptionEndDate
+                ? new Date(account.subscriptionEndDate).toDateString()
+                : "NEVER"
             })`}
             disabled
             className="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
