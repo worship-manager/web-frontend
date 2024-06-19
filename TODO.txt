@@ -1,9 +1,9 @@
 TODO:
 
 x Replace opengraph.jpg
-o Implement forgot password
+x Implement forgot password
 x Email verification link should point to frontend
   x Take the verification token and send it to the backend
 o List supported operating systems
-o Allow downloading installer
+x Allow downloading installer
 o Implement logout

@@ -34,8 +34,8 @@ import Button from "@components/ui/button.astro";
 
   downloadButton.onclick = async () => {
     const os = osSelect.value;
-		if (!os) return;
+    if (!os) return;
     const res = await fetch(`${reqUrl}/api/download/${os}`).then((r) => r.json());
-		window.open(res.link, "_blank");
+    window.open(res.link, "_blank");
   };
 </script>
