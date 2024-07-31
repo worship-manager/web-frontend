@@ -13,12 +13,7 @@ const { plan } = Astro.props;
       <p class="mt-3 text-4xl font-bold text-black md:text-4xl">
         {
           plan.price && typeof plan.price === "object" ? (
-            <>
-              {plan.price.monthly}
-              <span class="mt-1 text-sm font-medium text-gray-400 md:text-2xl">
-                {plan.price && typeof plan.price === "object" ? "/m" : null}
-              </span>
-            </>
+						plan.price.sale
           ) : (
             plan.price
           )
