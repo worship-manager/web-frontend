@@ -1,41 +1,259 @@
 ---
-import Container from "@components/container.astro";
-import Sectionhead from "@components/sectionhead.astro";
-import Layout from "@layouts/Layout.astro";
 import Button from "@components/ui/button.astro";
+import Container from "@components/container.astro";
+import Layout from "@layouts/Layout.astro";
 ---
 
-<Layout title="Account">
-  <Container>
-    <Sectionhead>
-      <Fragment slot="title">Download</Fragment>
-      <Fragment slot="desc">Get the Worship Manager installer</Fragment>
-    </Sectionhead>
-    <div class="max-w-2xl mx-auto flex justify-center items-center gap-5 mt-16">
-      <label>
-        <select
-          id="os-select"
-          class="px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100">
-          <option selected disabled value="">Select OS</option>
-          <option value="windows">Windows</option>
-          <option value="linux">Linux</option>
-        </select>
-      </label>
-      <Button style="primary" id="download-button">Download</Button>
+<Layout title="Download">
+  <main class="relative isolate overflow-hidden border-y border-slate-100 bg-slate-50/70">
+    <div
+      aria-hidden="true"
+      class="absolute -left-48 top-10 -z-10 h-96 w-96 rounded-full bg-blue-100/70 blur-3xl">
+    </div>
+    <div
+      aria-hidden="true"
+      class="absolute -right-48 bottom-0 -z-10 h-96 w-96 rounded-full bg-violet-100/60 blur-3xl">
+    </div>
+
+    <Container class="py-16 sm:py-20 lg:py-24">
+      <div class="grid items-center gap-12 lg:grid-cols-[1fr_0.9fr] lg:gap-16">
+        <section>
+          <div
+            class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-sm font-medium text-slate-700 shadow-sm">
+            <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
+            Latest stable release
+          </div>
+
+          <h1
+            class="mt-6 max-w-2xl text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
+            Your service starts with the right tools.
+          </h1>
+          <p class="mt-6 max-w-xl text-lg leading-8 text-slate-600">
+            Download Worship Manager for your desktop and prepare songs, scripture, media, and
+            presentations in one focused workspace.
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-slate-700">
+            <span class="flex items-center gap-2">
+              <svg class="h-5 w-5 text-emerald-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M16.704 5.292a1 1 0 0 1 .004 1.414l-7.25 7.292a1 1 0 0 1-1.42.002L3.29 9.25a1 1 0 0 1 1.414-1.414l4.04 4.04 6.544-6.58a1 1 0 0 1 1.415-.004Z" clip-rule="evenodd"></path>
+              </svg>
+              Free demo included
+            </span>
+            <span class="flex items-center gap-2">
+              <svg class="h-5 w-5 text-emerald-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M16.704 5.292a1 1 0 0 1 .004 1.414l-7.25 7.292a1 1 0 0 1-1.42.002L3.29 9.25a1 1 0 0 1 1.414-1.414l4.04 4.04 6.544-6.58a1 1 0 0 1 1.415-.004Z" clip-rule="evenodd"></path>
+              </svg>
+              Windows and Linux
+            </span>
+          </div>
+        </section>
+
+        <section
+          aria-labelledby="download-heading"
+          class="rounded-2xl border border-slate-200 bg-white p-5 shadow-xl shadow-slate-900/5 sm:p-7">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h2 id="download-heading" class="text-xl font-semibold text-slate-950">
+                Choose your platform
+              </h2>
+              <p id="release-version" class="mt-1 text-sm text-slate-500">
+                Checking the latest version…
+              </p>
+            </div>
+            <div class="rounded-xl bg-slate-950 p-3 text-white">
+              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"></path>
+              </svg>
+            </div>
+          </div>
+
+          <div class="mt-6 space-y-3">
+            <div class="relative rounded-xl border border-slate-200 p-4 transition hover:border-slate-400 hover:bg-slate-50/80">
+              <span
+                id="windows-recommended"
+                class="absolute -top-2.5 right-3 hidden rounded-full bg-blue-600 px-2.5 py-0.5 text-xs font-semibold text-white">
+                Recommended
+              </span>
+              <div class="grid grid-cols-[auto_1fr] items-center gap-4 sm:grid-cols-[auto_1fr_auto]">
+                <div class="grid h-12 w-12 shrink-0 grid-cols-2 gap-0.5 rounded-lg bg-blue-50 p-2.5 text-blue-600" aria-hidden="true">
+                  <span class="bg-current"></span><span class="bg-current"></span>
+                  <span class="bg-current"></span><span class="bg-current"></span>
+                </div>
+                <div class="min-w-0 flex-1">
+                  <h3 class="font-semibold text-slate-900">Windows</h3>
+                  <p class="mt-0.5 text-sm text-slate-500">Desktop installer · .exe</p>
+                </div>
+                <Button
+                  type="button"
+                  size="lg"
+                  data-download="windows"
+                  data-default-label="Download"
+                  aria-label="Download Worship Manager for Windows"
+                  class="col-span-2 shrink-0 sm:col-span-1 disabled:cursor-wait disabled:opacity-70">
+                  <span data-button-label>Download</span>
+                </Button>
+              </div>
+            </div>
+
+            <div class="relative rounded-xl border border-slate-200 p-4 transition hover:border-slate-400 hover:bg-slate-50/80">
+              <span
+                id="linux-recommended"
+                class="absolute -top-2.5 right-3 hidden rounded-full bg-blue-600 px-2.5 py-0.5 text-xs font-semibold text-white">
+                Recommended
+              </span>
+              <div class="grid grid-cols-[auto_1fr] items-center gap-4 sm:grid-cols-[auto_1fr_auto]">
+                <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-amber-50 text-amber-700" aria-hidden="true">
+                  <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m7 8-4 4 4 4m10-8 4 4-4 4m-7 3 4-14"></path>
+                  </svg>
+                </div>
+                <div class="min-w-0 flex-1">
+                  <h3 class="font-semibold text-slate-900">Linux</h3>
+                  <p class="mt-0.5 text-sm text-slate-500">Portable package · AppImage</p>
+                </div>
+                <Button
+                  type="button"
+                  size="lg"
+                  data-download="linux"
+                  data-default-label="Download"
+                  aria-label="Download Worship Manager for Linux"
+                  class="col-span-2 shrink-0 sm:col-span-1 disabled:cursor-wait disabled:opacity-70">
+                  <span data-button-label>Download</span>
+                </Button>
+              </div>
+            </div>
+          </div>
+
+          <p
+            id="download-status"
+            class="mt-4 min-h-[1.25rem] text-sm text-slate-600"
+            role="status"
+            aria-live="polite">
+          </p>
+          <p class="mt-2 border-t border-slate-100 pt-4 text-center text-sm text-slate-500">
+            Need help? <a class="font-medium text-slate-900 underline-offset-4 hover:underline" href="/contact">Contact support</a>
+          </p>
+        </section>
+      </div>
+    </Container>
+  </main>
+
+  <Container class="py-16 sm:py-20">
+    <div class="mx-auto max-w-4xl">
+      <div class="text-center">
+        <p class="text-sm font-semibold uppercase tracking-wider text-blue-600">Quick start</p>
+        <h2 class="mt-2 text-3xl font-bold tracking-tight text-slate-950">Ready in three steps</h2>
+      </div>
+      <ol class="mt-10 grid gap-8 sm:grid-cols-3">
+        <li class="text-center sm:text-left">
+          <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-slate-950 text-sm font-semibold text-white">1</span>
+          <h3 class="mt-4 font-semibold text-slate-900">Download</h3>
+          <p class="mt-2 text-sm leading-6 text-slate-600">Choose the installer for your computer above.</p>
+        </li>
+        <li class="text-center sm:text-left">
+          <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-slate-950 text-sm font-semibold text-white">2</span>
+          <h3 class="mt-4 font-semibold text-slate-900">Install</h3>
+          <p class="mt-2 text-sm leading-6 text-slate-600">Open the downloaded file and follow the setup prompts.</p>
+        </li>
+        <li class="text-center sm:text-left">
+          <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-slate-950 text-sm font-semibold text-white">3</span>
+          <h3 class="mt-4 font-semibold text-slate-900">Start presenting</h3>
+          <p class="mt-2 text-sm leading-6 text-slate-600">Launch Worship Manager and build your first service.</p>
+        </li>
+      </ol>
     </div>
   </Container>
 </Layout>
 
 <script>
-  const osSelect = document.getElementById("os-select") as HTMLSelectElement;
-  const downloadButton = document.getElementById("download-button") as HTMLLinkElement;
+  const apiBaseUrl = import.meta.env.PUBLIC_SERVER_URL?.replace(/\/$/, "");
+  const downloadButtons = document.querySelectorAll<HTMLButtonElement>("[data-download]");
+  const downloadStatus = document.getElementById("download-status");
+  const releaseVersion = document.getElementById("release-version");
 
-  const reqUrl = import.meta.env.PUBLIC_SERVER_URL;
+  const browserPlatform = navigator.platform.toLowerCase();
+  const userAgent = navigator.userAgent.toLowerCase();
+  const detectedPlatform =
+    browserPlatform.includes("win") || userAgent.includes("windows")
+      ? "windows"
+      : !userAgent.includes("android") &&
+          (browserPlatform.includes("linux") || userAgent.includes("linux"))
+        ? "linux"
+        : null;
 
-  downloadButton.onclick = async () => {
-    const os = osSelect.value;
-    if (!os) return;
-    const res = await fetch(`${reqUrl}/api/download/${os}`).then((r) => r.json());
-    window.open(res.link, "_blank");
-  };
+  if (detectedPlatform) {
+    document.getElementById(`${detectedPlatform}-recommended`)?.classList.remove("hidden");
+  }
+
+  async function loadLatestVersion() {
+    if (!apiBaseUrl) {
+      if (releaseVersion) releaseVersion.textContent = "Latest stable release";
+      return;
+    }
+
+    try {
+      const response = await fetch(`${apiBaseUrl}/api/download/latest`);
+      if (!response.ok) throw new Error("Could not retrieve release information");
+
+      const data = (await response.json()) as { latest?: string };
+      const version = data.latest?.replace(/^v/i, "");
+      if (releaseVersion) {
+        releaseVersion.textContent = version
+          ? `Version ${version} · Latest stable release`
+          : "Latest stable release";
+      }
+    } catch {
+      if (releaseVersion) releaseVersion.textContent = "Latest stable release";
+    }
+  }
+
+  async function download(platform: string, selectedButton: HTMLButtonElement) {
+    if (!apiBaseUrl) {
+      if (downloadStatus) {
+        downloadStatus.textContent = "Downloads are temporarily unavailable. Please try again later.";
+        downloadStatus.className = "mt-4 min-h-[1.25rem] text-sm text-red-600";
+      }
+      return;
+    }
+
+    const selectedLabel = selectedButton.querySelector<HTMLElement>("[data-button-label]");
+    downloadButtons.forEach((button) => (button.disabled = true));
+    if (selectedLabel) selectedLabel.textContent = "Preparing…";
+    if (downloadStatus) {
+      downloadStatus.textContent = `Preparing your ${platform === "windows" ? "Windows" : "Linux"} download…`;
+      downloadStatus.className = "mt-4 min-h-[1.25rem] text-sm text-slate-600";
+    }
+
+    try {
+      const response = await fetch(`${apiBaseUrl}/api/download/${platform}`);
+      const data = (await response.json()) as { link?: string; cause?: string };
+      if (!response.ok || !data.link) {
+        throw new Error(data.cause || "A download link could not be created");
+      }
+
+      if (downloadStatus) downloadStatus.textContent = "Your download is starting…";
+      window.location.assign(data.link);
+    } catch (error) {
+      if (downloadStatus) {
+        downloadStatus.textContent =
+          error instanceof Error
+            ? `${error.message}. Please try again.`
+            : "The download could not be started. Please try again.";
+        downloadStatus.className = "mt-4 min-h-[1.25rem] text-sm text-red-600";
+      }
+    } finally {
+      downloadButtons.forEach((button) => (button.disabled = false));
+      if (selectedLabel) selectedLabel.textContent = selectedButton.dataset.defaultLabel || "Download";
+    }
+  }
+
+  downloadButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const platform = button.dataset.download;
+      if (platform) void download(platform, button);
+    });
+  });
+
+  void loadLatestVersion();
 </script>

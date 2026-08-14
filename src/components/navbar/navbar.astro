@@ -20,6 +20,10 @@ const menuitems = [
     path: "/pricing",
   },
   {
+    title: "Download",
+    path: "/download",
+  },
+  {
     title: "Blog",
     path: "/blog",
   },
@@ -58,7 +62,14 @@ const menuitems = [
 
                 {(!item.children || item.children.length == 0) && (
                   <li>
-                    <a href={item.path} class="flex lg:px-3 py-2 text-gray-600 hover:text-gray-900">
+                    <a
+                      href={item.path}
+                      class:list={[
+                        "flex py-2 hover:text-gray-900 lg:px-3",
+                        item.path === "/download"
+                          ? "font-semibold text-slate-900"
+                          : "text-gray-600",
+                      ]}>
                       {item.title}
                     </a>
                   </li>
