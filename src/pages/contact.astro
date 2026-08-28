@@ -3,7 +3,7 @@ import Contactform from "@components/contactform.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
 import Layout from "@layouts/Layout.astro";
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
 ---
 
 <Layout title="Contact">
@@ -21,10 +21,10 @@ import { Icon } from "astro-icon";
         </p>
         <div class="mt-5">
           <div class="flex items-center mt-2 space-x-2 text-gray-600">
-            <Icon class="text-gray-400 w-4 h-4" name="uil:map-marker" />
+            <Icon class="text-gray-400 w-4 h-4" name="map-marker" />
             <span>Lagos, Nigeria</span>
           </div><div class="flex items-center mt-2 space-x-2 text-gray-600">
-            <Icon class="text-gray-400 w-4 h-4" name="uil:envelope" /><a
+            <Icon class="text-gray-400 w-4 h-4" name="envelope" /><a
               href="mailto:support@worshipmanager.org">support@worshipmanager.org</a
             >
           </div>

@@ -41,7 +41,7 @@ const originalPrice = hasDiscount ? plan.price.original : null;
 
   <ul class="mt-6 grid flex-1 gap-y-4 text-left">
     {
-      plan.features.map((item) => (
+      plan.features.map((item: string) => (
         <li class="flex items-start gap-3 text-sm text-slate-700">
           <Tick class="h-5 w-5 shrink-0 text-emerald-600" />
           <span>{item}</span>
